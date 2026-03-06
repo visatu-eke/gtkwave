@@ -57,119 +57,119 @@ static void service_left_edge_marshal(gpointer null_data, guint callback_action,
 {
 (void)callback_action;
 
-service_left_edge(widget, null_data); 
+service_left_edge(widget, null_data);
 }
 
 static void service_right_edge_marshal(gpointer null_data, guint callback_action, GtkWidget *widget)
 {
 (void)callback_action;
 
-service_right_edge(widget, null_data); 
+service_right_edge(widget, null_data);
 }
 
 static void service_zoom_in_marshal(gpointer null_data, guint callback_action, GtkWidget *widget)
 {
 (void)callback_action;
 
-service_zoom_in(widget, null_data); 
+service_zoom_in(widget, null_data);
 }
 
 static void service_zoom_out_marshal(gpointer null_data, guint callback_action, GtkWidget *widget)
 {
 (void)callback_action;
 
-service_zoom_out(widget, null_data); 
+service_zoom_out(widget, null_data);
 }
 
 static void service_zoom_full_marshal(gpointer null_data, guint callback_action, GtkWidget *widget)
 {
 (void)callback_action;
 
-service_zoom_full(widget, null_data); 
+service_zoom_full(widget, null_data);
 }
 
 static void service_zoom_fit_marshal(gpointer null_data, guint callback_action, GtkWidget *widget)
-{ 
+{
 (void)callback_action;
 
-service_zoom_fit(widget, null_data); 
+service_zoom_fit(widget, null_data);
 }
 
 static void service_zoom_left_marshal(gpointer null_data, guint callback_action, GtkWidget *widget)
 {
 (void)callback_action;
 
-service_zoom_left(widget, null_data); 
+service_zoom_left(widget, null_data);
 }
 
 static void service_zoom_right_marshal(gpointer null_data, guint callback_action, GtkWidget *widget)
 {
 (void)callback_action;
 
-service_zoom_right(widget, null_data); 
+service_zoom_right(widget, null_data);
 }
 
 static void service_zoom_undo_marshal(gpointer null_data, guint callback_action, GtkWidget *widget)
 {
 (void)callback_action;
 
-service_zoom_undo(widget, null_data); 
+service_zoom_undo(widget, null_data);
 }
 
 static void fetch_right_marshal(gpointer null_data, guint callback_action, GtkWidget *widget)
 {
 (void)callback_action;
 
-fetch_right(widget, null_data); 
+fetch_right(widget, null_data);
 }
 
 static void fetch_left_marshal(gpointer null_data, guint callback_action, GtkWidget *widget)
 {
 (void)callback_action;
 
-fetch_left(widget, null_data); 
+fetch_left(widget, null_data);
 }
 
 static void discard_right_marshal(gpointer null_data, guint callback_action, GtkWidget *widget)
 {
 (void)callback_action;
 
-discard_right(widget, null_data); 
+discard_right(widget, null_data);
 }
 
 static void discard_left_marshal(gpointer null_data, guint callback_action, GtkWidget *widget)
 {
 (void)callback_action;
 
-discard_left(widget, null_data); 
+discard_left(widget, null_data);
 }
 
 static void service_right_shift_marshal(gpointer null_data, guint callback_action, GtkWidget *widget)
 {
 (void)callback_action;
 
-service_right_shift(widget, null_data); 
+service_right_shift(widget, null_data);
 }
 
 static void service_left_shift_marshal(gpointer null_data, guint callback_action, GtkWidget *widget)
 {
 (void)callback_action;
 
-service_left_shift(widget, null_data); 
+service_left_shift(widget, null_data);
 }
 
 static void service_right_page_marshal(gpointer null_data, guint callback_action, GtkWidget *widget)
-{ 
+{
 (void)callback_action;
 
-service_right_page(widget, null_data); 
+service_right_page(widget, null_data);
 }
 
 static void service_left_page_marshal(gpointer null_data, guint callback_action, GtkWidget *widget)
-{ 
+{
 (void)callback_action;
 
-service_left_page(widget, null_data); 
+service_left_page(widget, null_data);
 }
 
 /* ruler */
@@ -3444,7 +3444,7 @@ bvptr combine_traces(int direction, Trptr single_trace_only)
 								else
 								{
 								t_botname = vname;
-								}	
+								}
 							}
 						}
 						else
@@ -3457,7 +3457,7 @@ bvptr combine_traces(int direction, Trptr single_trace_only)
 							{
 							t_botname = t->n.nd->nname;
 							}
-	
+
 						if(t_topname && t_botname)
 							{
 							char *mat = attempt_vecmatch(t_topname, t_botname);
@@ -3572,7 +3572,7 @@ bvptr combine_traces(int direction, Trptr single_trace_only)
                 	                {
                 	                if(namey[j]=='[') break;
                 	                }
-	
+
 	                        if(j>-1)
 	                                {
 	                                int items = sscanf(namey+j, "[%d][%d]", &row2, &bit2);
@@ -3580,7 +3580,7 @@ bvptr combine_traces(int direction, Trptr single_trace_only)
 	                                        {
 						int rowabs, bitabs, width2d;
 	                                        /* printf(">> %d %d (items = %d)\n", row2, bit2, items); */
-	
+
 	                                        offsety = j;
 						is_2d = (offset == offsety) && !memcmp(nam, namey, offsety);
 
@@ -5755,7 +5755,7 @@ static void colorformat(int color)
 			color_prev++;
 			}
 
-		if(color_prev > WAVE_COLOR_VIOLET) color_prev = WAVE_COLOR_RED;
+		if(color_prev > WAVE_COLOR_MAGENTA) color_prev = WAVE_COLOR_RED;
               	t->t_color = color_prev;
 		}
               fix=1;
@@ -5876,37 +5876,18 @@ menu_colorformat_5(gpointer null_data, guint callback_action, GtkWidget *widget)
 
 if(GLOBALS->helpbox_is_active)
         {
-        help_text_bold("\n\nColor Format Blue");
+        help_text_bold("\n\nColor Format Cyan");
         help_text(
-                " uses blue waveform colorings for all selected traces."
+                " uses cyan waveform colorings for all selected traces."
         );
         return;
         }
 
-colorformat(WAVE_COLOR_BLUE);
+colorformat(WAVE_COLOR_CYAN);
 }
 
 void
 menu_colorformat_6(gpointer null_data, guint callback_action, GtkWidget *widget)
-{
-(void)null_data;
-(void)callback_action;
-(void)widget;
-
-if(GLOBALS->helpbox_is_active)
-        {
-        help_text_bold("\n\nColor Format Indigo");
-        help_text(
-                " uses indigo waveform colorings for all selected traces."
-        );
-        return;
-        }
-
-colorformat(WAVE_COLOR_INDIGO);
-}
-
-void
-menu_colorformat_7(gpointer null_data, guint callback_action, GtkWidget *widget)
 {
 (void)null_data;
 (void)callback_action;
@@ -5922,6 +5903,25 @@ if(GLOBALS->helpbox_is_active)
         }
 
 colorformat(WAVE_COLOR_VIOLET);
+}
+
+void
+menu_colorformat_7(gpointer null_data, guint callback_action, GtkWidget *widget)
+{
+(void)null_data;
+(void)callback_action;
+(void)widget;
+
+if(GLOBALS->helpbox_is_active)
+        {
+        help_text_bold("\n\nColor Format Magenta");
+        help_text(
+                " uses magenta waveform colorings for all selected traces."
+        );
+        return;
+        }
+
+colorformat(WAVE_COLOR_MAGENTA);
 }
 
 void
@@ -6831,7 +6831,7 @@ if(GLOBALS->helpbox_is_active)
         help_text_bold("\n\nData Format-Time");
         help_text(
                 " will step through all highlighted traces and ensure that"
-                " bits and vectors with this qualifier will display as time values." 
+                " bits and vectors with this qualifier will display as time values."
         );
         return;
         }
@@ -6851,7 +6851,7 @@ if(GLOBALS->helpbox_is_active)
         help_text_bold("\n\nData Format-Enum");
         help_text(
                 " will step through all highlighted traces and ensure that"
-                " bits and vectors with this qualifier will display as enum values, provided such values were dumped into file." 
+                " bits and vectors with this qualifier will display as enum values, provided such values were dumped into file."
         );
         return;
         }
@@ -8085,9 +8085,9 @@ static gtkwave_mlist_t menu_items[] =
     WAVE_GTKIFE("/Edit/Color Format/Orange", NULL, menu_colorformat_2,    WV_MENU_CLRFMT2, "<Item>"),
     WAVE_GTKIFE("/Edit/Color Format/Yellow", NULL, menu_colorformat_3,    WV_MENU_CLRFMT3, "<Item>"),
     WAVE_GTKIFE("/Edit/Color Format/Green", NULL, menu_colorformat_4,    WV_MENU_CLRFMT4, "<Item>"),
-    WAVE_GTKIFE("/Edit/Color Format/Blue", NULL, menu_colorformat_5,    WV_MENU_CLRFMT5, "<Item>"),
-    WAVE_GTKIFE("/Edit/Color Format/Indigo", NULL, menu_colorformat_6,    WV_MENU_CLRFMT6, "<Item>"),
-    WAVE_GTKIFE("/Edit/Color Format/Violet", NULL, menu_colorformat_7,    WV_MENU_CLRFMT7, "<Item>"),
+    WAVE_GTKIFE("/Edit/Color Format/Cyan", NULL, menu_colorformat_5,    WV_MENU_CLRFMT5, "<Item>"),
+    WAVE_GTKIFE("/Edit/Color Format/Violet", NULL, menu_colorformat_6,    WV_MENU_CLRFMT6, "<Item>"),
+    WAVE_GTKIFE("/Edit/Color Format/Magenta", NULL, menu_colorformat_7,    WV_MENU_CLRFMT7, "<Item>"),
     WAVE_GTKIFE("/Edit/Color Format/Cycle", NULL, menu_colorformat_cyc,    WV_MENU_CLRFMTC, "<Item>"),
     WAVE_GTKIFE("/Edit/Color Format/<separator>", NULL, NULL, WV_MENU_SEP5A, "<Separator>"),
     WAVE_GTKIFE("/Edit/Color Format/Keep xz Colors", NULL, menu_keep_xz_colors, WV_MENU_KEEPXZ, "<ToggleItem>"),
@@ -8798,9 +8798,9 @@ static gtkwave_mlist_t popmenu_items[] =
     WAVE_GTKIFE("/Color Format/Orange", NULL, menu_colorformat_2,    WV_MENU_CLRFMT2, "<Item>"),
     WAVE_GTKIFE("/Color Format/Yellow", NULL, menu_colorformat_3,    WV_MENU_CLRFMT3, "<Item>"),
     WAVE_GTKIFE("/Color Format/Green", NULL, menu_colorformat_4,    WV_MENU_CLRFMT4, "<Item>"),
-    WAVE_GTKIFE("/Color Format/Blue", NULL, menu_colorformat_5,    WV_MENU_CLRFMT5, "<Item>"),
-    WAVE_GTKIFE("/Color Format/Indigo", NULL, menu_colorformat_6,    WV_MENU_CLRFMT6, "<Item>"),
-    WAVE_GTKIFE("/Color Format/Violet", NULL, menu_colorformat_7,    WV_MENU_CLRFMT7, "<Item>"),
+    WAVE_GTKIFE("/Color Format/Cyan", NULL, menu_colorformat_5,    WV_MENU_CLRFMT5, "<Item>"),
+    WAVE_GTKIFE("/Color Format/Violet", NULL, menu_colorformat_6,    WV_MENU_CLRFMT6, "<Item>"),
+    WAVE_GTKIFE("/Color Format/Magenta", NULL, menu_colorformat_7,    WV_MENU_CLRFMT7, "<Item>"),
     WAVE_GTKIFE("/Color Format/Cycle", NULL, menu_colorformat_cyc,    WV_MENU_CLRFMTC, "<Item>"),
     WAVE_GTKIFE("/<separator>", NULL, NULL, WV_MENU_SEP1, "<Separator>"),
     WAVE_GTKIFE("/Insert Analog Height Extension", NULL, menu_insert_analog_height_extension, WV_MENU_EIA, "<Item>"),

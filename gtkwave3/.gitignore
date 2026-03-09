@@ -23,11 +23,9 @@ config.h.in~
 # Build logs
 build.log
 configure.log
+package.log
 gdb_crash.log
 
-# Local scripts (not for upstream)
-build.ps1
-configure.ps1
-run_gdb.ps1
-gdb_commands.txt
-gdb_commands_remote.txt
+# Packaging output
+dist/
+*.zip

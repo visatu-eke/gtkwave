@@ -1,0 +1,33 @@
+# Build artifacts
+*.o
+*.a
+*.exe
+*.lo
+*.la
+*.so
+*.dylib
+
+# Dependency tracking
+.deps/
+.libs/
+
+# Autotools generated (configure run outputs)
+Makefile
+config.h
+config.log
+config.status
+stamp-h1
+autom4te.cache/
+config.h.in~
+
+# Build logs
+build.log
+configure.log
+gdb_crash.log
+
+# Local scripts (not for upstream)
+build.ps1
+configure.ps1
+run_gdb.ps1
+gdb_commands.txt
+gdb_commands_remote.txt

@@ -22,6 +22,18 @@
 
 #include <config.h>
 #include <string.h>
+#include <stdlib.h>
+
+#ifndef HAVE_STRNDUP
+static char *strndup(const char *s, size_t n)
+{
+size_t len = strlen(s);
+if(n < len) len = n;
+char *p = (char *)malloc(len + 1);
+if(p) { memcpy(p, s, len); p[len] = '\0'; }
+return p;
+}
+#endif
 
 #if HAVE_GETOPT_H
 #include <getopt.h>
@@ -830,9 +842,9 @@ while(!feof(f))
 			case FST_VT_GEN_STRING: len = 0; break;
 			case FST_VT_VCD_EVENT: len = (len != 0) ? len : 1;  break;
 			default:
-				if(len == 0) 
-					{ 
-					len = 1; 
+				if(len == 0)
+					{
+					len = 1;
 					if((mti_realparam_fix) && (vartype == FST_VT_VCD_PARAMETER))
 						{
 						vartype = FST_VT_VCD_REAL_PARAMETER;

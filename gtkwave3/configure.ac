@@ -7,6 +7,7 @@ AC_CONFIG_SRCDIR([src/vcd.c])
 AM_INIT_AUTOMAKE
 AC_CONFIG_HEADER([config.h])
 AM_MAINTAINER_MODE
+AC_USE_SYSTEM_EXTENSIONS
 
 # ------------- GCONF -------------------
 
@@ -100,7 +101,7 @@ AC_ARG_ENABLE([struct_pack],
 [  --enable-struct-pack    Enables C language structure packing pragmas
                           intended for use on architectures which support
                           misaligned loads and stores (x86/x86_64/AVR32/
-                          M68K/PowerPC/S390).  This can reduce memory on 
+                          M68K/PowerPC/S390).  This can reduce memory on
                           traces with very many signals.],
 [
 if test "X$enable_struct_pack" = "Xyes" ; then
@@ -196,7 +197,7 @@ AC_MSG_CHECKING([if gtk1 or gtk2 should be used])
 
 GTK1=no
 AC_ARG_ENABLE([gtk1],
-[  --enable-gtk1           Causes the GTK+ frontend to be built with gtk1 
+[  --enable-gtk1           Causes the GTK+ frontend to be built with gtk1
                           instead of gtk2.],
 [
 if test "X$enable_gtk1" = "Xno" ; then
@@ -443,7 +444,7 @@ AM_PROG_CC_C_O
 #
 AC_PATH_PROG(GEDITTEST, [gedit], [notfound])
 if test "$GEDITTEST" = "notfound" ; then
-	GEDIT_CFLAGS=	
+	GEDIT_CFLAGS=
 else
 	GEDIT_CFLAGS="-DGEDIT_PATH=\\\"$GEDITTEST\\\""
 fi
@@ -501,7 +502,7 @@ AC_CHECK_LIB([m], [sqrt])
 AC_CHECK_LIB([pthread], [main])
 
 # included or system libz and libbz2.  By default, we search for the
-# system libz and libbz2.  If not found, build the included ones.  
+# system libz and libbz2.  If not found, build the included ones.
 # The --enable-local-libz and --enable-local_libbz2 arguments can be
 # used to force the use of the included libs.  --disable-local-libz
 # and --disable-local-libbz2 can be used to force the use of system
@@ -526,7 +527,7 @@ if test "X$force_bundled_libz" != "Xyes" ; then
         AC_TRY_COMPILE([#include <zlib.h>], [gzdopen(0,"rb");],, [need_libz=yes])
 	if test "$need_libz" = "yes" -a "X$force_system_libz" = "Xyes" ; then
 		AC_MSG_ERROR([
-You have disabled building the bundled libz but no system libz headers 
+You have disabled building the bundled libz but no system libz headers
 could be found.  Either allow building the bundled libz (by not using
 --disable-local-libz) or make sure your system has a libz installed])
 	fi
@@ -746,7 +747,7 @@ else
         AC_SUBST(GTK_UNIX_PRINT_LIBS)
         AC_SUBST(GTK_UNIX_PRINT_CFLAGS)
 
-fi 
+fi
 
 # Checks for header files.
 AC_FUNC_ALLOCA
@@ -824,13 +825,16 @@ fi
 
 CFLAGS="${CFLAGS} ${STRUCT_PACK}"
 
-if test "X$OSTYPE" = "Xmsys" ; then
+case "$OSTYPE:$EXEEXT" in
+*msys*|*:.exe)
 # add library for common dialog found in file.c
 	MINGW_LDADD="-lcomdlg32"
-	else
+	;;
+*)
 	# there are conflicts with struct timespec in pthreads vs mingw
 	CFLAGS="${CFLAGS} -DFST_WRITER_PARALLEL"
-	fi
+	;;
+esac
 
 if test "X$ETCL" = "Xyes" ; then
 if test "X$OSTYPE" = "Xcygwin" ; then
@@ -941,7 +945,7 @@ AC_CONFIG_FILES([Makefile
 ])
 
 
-AC_MSG_NOTICE([         
+AC_MSG_NOTICE([
 --------------------------------------------
   Configuration summary:
 
@@ -975,7 +979,7 @@ AC_MSG_NOTICE([
   TCL_INCLUDE_SPEC      : $TCL_INCLUDE_SPEC
   TCL_LIB_SPEC          : $TCL_LIB_SPEC
   TCL_LDADD             : $TCL_LDADD
-  TCL_DEFADD            : $TCL_DEFADD  
+  TCL_DEFADD            : $TCL_DEFADD
 
   TK_INCLUDE_SPEC       : $TK_INCLUDE_SPEC
   TK_LIB_SPEC           : $TK_LIB_SPEC

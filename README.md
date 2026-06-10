@@ -19,6 +19,6 @@ mingw-w64-ucrt-x86_64-tk \
 mingw-w64-ucrt-x86_64-gperf \
 mingw-w64-ucrt-x86_64-judy \
 mingw-w64-ucrt-x86_64-xz \
-mingw-w64-ucrt-x86_64-gtk2 
+mingw-w64-ucrt-x86_64-gtk2
 ```
-`mingw-w64-ucrt-x86_64-gtk3` for gtkwave-gtk3*
+mingw-w64-ucrt-x86_64-gtk3 

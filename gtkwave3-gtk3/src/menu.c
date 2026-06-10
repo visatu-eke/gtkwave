@@ -5612,39 +5612,39 @@ colorformat(WAVE_COLOR_GREEN);
 void
 menu_colorformat_5(gpointer null_data, guint callback_action, GtkWidget *widget)
 {
-(void)null_data;
-(void)callback_action;
-(void)widget;
+	(void)null_data;
+	(void)callback_action;
+	(void)widget;
 
-if(GLOBALS->helpbox_is_active)
-        {
-        help_text_bold("\n\nColor Format Blue");
-        help_text(
-                " uses blue waveform colorings for all selected traces."
-        );
-        return;
-        }
+	if(GLOBALS->helpbox_is_active)
+	{
+		help_text_bold("\n\nColor Format Cyan");
+		help_text(
+			" uses cyan waveform colorings for all selected traces."
+		);
+		return;
+	}
 
-colorformat(WAVE_COLOR_BLUE);
+	colorformat(WAVE_COLOR_CYAN);
 }
 
 void
 menu_colorformat_6(gpointer null_data, guint callback_action, GtkWidget *widget)
 {
-(void)null_data;
-(void)callback_action;
-(void)widget;
+	(void)null_data;
+	(void)callback_action;
+	(void)widget;
 
-if(GLOBALS->helpbox_is_active)
-        {
-        help_text_bold("\n\nColor Format Indigo");
-        help_text(
-                " uses indigo waveform colorings for all selected traces."
-        );
-        return;
-        }
+	if(GLOBALS->helpbox_is_active)
+	{
+		help_text_bold("\n\nColor Format Magenta");
+		help_text(
+			" uses magenta waveform colorings for all selected traces."
+		);
+		return;
+	}
 
-colorformat(WAVE_COLOR_INDIGO);
+	colorformat(WAVE_COLOR_MAGENTA);
 }
 
 void
@@ -7850,8 +7850,8 @@ static gtkwave_mlist_t menu_items[] =
     WAVE_GTKIFE("/Edit/Color Format/Orange", NULL, menu_colorformat_2,    WV_MENU_CLRFMT2, "<Item>"),
     WAVE_GTKIFE("/Edit/Color Format/Yellow", NULL, menu_colorformat_3,    WV_MENU_CLRFMT3, "<Item>"),
     WAVE_GTKIFE("/Edit/Color Format/Green", NULL, menu_colorformat_4,    WV_MENU_CLRFMT4, "<Item>"),
-    WAVE_GTKIFE("/Edit/Color Format/Blue", NULL, menu_colorformat_5,    WV_MENU_CLRFMT5, "<Item>"),
-    WAVE_GTKIFE("/Edit/Color Format/Indigo", NULL, menu_colorformat_6,    WV_MENU_CLRFMT6, "<Item>"),
+	WAVE_GTKIFE("/Edit/Color Format/Cyan", NULL, menu_colorformat_5,    WV_MENU_CLRFMT5, "<Item>"),
+	WAVE_GTKIFE("/Edit/Color Format/Magenta", NULL, menu_colorformat_6,    WV_MENU_CLRFMT6, "<Item>"),
     WAVE_GTKIFE("/Edit/Color Format/Violet", NULL, menu_colorformat_7,    WV_MENU_CLRFMT7, "<Item>"),
     WAVE_GTKIFE("/Edit/Color Format/Cycle", NULL, menu_colorformat_cyc,    WV_MENU_CLRFMTC, "<Item>"),
     WAVE_GTKIFE("/Edit/Color Format/<separator>", NULL, NULL, WV_MENU_SEP5A, "<Separator>"),
@@ -8397,8 +8397,8 @@ static gtkwave_mlist_t popmenu_items[] =
     WAVE_GTKIFE("/Color Format/Orange", NULL, menu_colorformat_2,    WV_MENU_CLRFMT2, "<Item>"),
     WAVE_GTKIFE("/Color Format/Yellow", NULL, menu_colorformat_3,    WV_MENU_CLRFMT3, "<Item>"),
     WAVE_GTKIFE("/Color Format/Green", NULL, menu_colorformat_4,    WV_MENU_CLRFMT4, "<Item>"),
-    WAVE_GTKIFE("/Color Format/Blue", NULL, menu_colorformat_5,    WV_MENU_CLRFMT5, "<Item>"),
-    WAVE_GTKIFE("/Color Format/Indigo", NULL, menu_colorformat_6,    WV_MENU_CLRFMT6, "<Item>"),
+	WAVE_GTKIFE("/Color Format/Cyan", NULL, menu_colorformat_5,    WV_MENU_CLRFMT5, "<Item>"),
+	WAVE_GTKIFE("/Color Format/Magenta", NULL, menu_colorformat_6,    WV_MENU_CLRFMT6, "<Item>"),
     WAVE_GTKIFE("/Color Format/Violet", NULL, menu_colorformat_7,    WV_MENU_CLRFMT7, "<Item>"),
     WAVE_GTKIFE("/Color Format/Cycle", NULL, menu_colorformat_cyc,    WV_MENU_CLRFMTC, "<Item>"),
     WAVE_GTKIFE("/<separator>", NULL, NULL, WV_MENU_SEP1, "<Separator>"),

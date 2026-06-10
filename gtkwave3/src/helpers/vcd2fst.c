@@ -24,16 +24,7 @@
 #include <string.h>
 #include <stdlib.h>
 
-#ifndef HAVE_STRNDUP
-static char *strndup(const char *s, size_t n)
-{
-size_t len = strlen(s);
-if(n < len) len = n;
-char *p = (char *)malloc(len + 1);
-if(p) { memcpy(p, s, len); p[len] = '\0'; }
-return p;
-}
-#endif
+
 
 #if HAVE_GETOPT_H
 #include <getopt.h>
